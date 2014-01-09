@@ -25,7 +25,10 @@
             	<div class="container">
             	    <div class="pull-right">
             	        <div class="share">
+<<<<<<< HEAD
             	            <?php //require_once("sharejiathis.php"); ?>
+=======
+>>>>>>> fe1a067c56eb64be0a7aecd73a0b4e645ed311b1
             	        </div>
 
 						<div class="user">
