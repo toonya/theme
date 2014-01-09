@@ -24,7 +24,6 @@
             	<div class="container">
             	    <div class="pull-right">
             	        <div class="share">
-            	            <?php require_once("sharejiathis.php"); ?>
             	        </div>
 
 						<div class="user">
