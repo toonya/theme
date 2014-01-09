@@ -10,6 +10,7 @@
         <!-- Bootstrap -->
         <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet" media="screen">
+		<script src="<?php echo get_template_directory_uri(); ?>/js/prefixfree.min"></script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -24,7 +25,7 @@
             	<div class="container">
             	    <div class="pull-right">
             	        <div class="share">
-            	            <?php require_once("sharejiathis.php"); ?>
+            	            <?php //require_once("sharejiathis.php"); ?>
             	        </div>
 
 						<div class="user">
