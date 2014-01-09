@@ -26,43 +26,12 @@ $result = add_role(
 // ! cunstomer system page
 // ----------------------------------------
 
-add_action( 'admin_menu', 'my_menu_pages');
-function my_menu_pages() {
-	//remove page
-	$cc_remove_page = array(
-		'edit.php',
-		'edit.php?post_type=page',
-		'tools.php',
-		'index.php',
-		'upload.php',
-		'post-new.php?post_type=page',
-		'edit-comments.php',
-		'themes.php',
-		'plugins.php',
-		'options-general.php'
-		);
-
-	foreach($cc_remove_page as $id=>$menu){
-		remove_menu_page($menu);
-	}
-	//remove subpage
-	$remove_submenu_page = array(
-		'edit.php?post_type=page' => 'post-new.php?post_type=page',
-		'edit.php' => 'post-new.php',
-		'users.php' => 'profile.php'
-		);
-
-	foreach($remove_submenu_page as $menu=>$submenu){
-		remove_submenu_page($menu,$submenu);
-	};
-	remove_submenu_page('edit.php','edit-tags.php?taxonomy=category');
-	remove_submenu_page('edit.php','edit-tags.php?taxonomy=post_tag');
-	remove_submenu_page('users.php','user-new.php');
-	remove_submenu_page('upload.php','upload.php');
-	remove_submenu_page('upload.php','media-new.php');
-
+add_action( 'admin_menu', 'employee_admin_menu');
+function employee_admin_menu() {
 	//add pageevernote:///view/283963/s10/80680381-86d9-4e14-808c-fa782a0160a0/80680381-86d9-4e14-808c-fa782a0160a0/
 	add_menu_page( '新闻', '新闻', 'manage_options', 'edit.php', '', '', 1 );
+	add_menu_page( '员工', '员工', 'manage_options', 'users.php', '', '', 60 );
+
 	add_menu_page( '页面', '页面', 'manage_options', 'edit.php?post_type=page', '', '', 2 );
 	add_menu_page( '导航', '导航', 'manage_options', 'nav-menus.php', '', '', 3);
 	add_menu_page( '图片库', '图片库', 'manage_options', 'upload.php', '', '', 10);

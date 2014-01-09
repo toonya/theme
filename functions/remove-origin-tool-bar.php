@@ -18,4 +18,46 @@ function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
 	$wp_admin_bar->remove_node( 'new-content' );
 }
+
+
+// ----------------------------------------
+// ! cunstomer system page
+// ----------------------------------------
+
+add_action( 'admin_menu', 'my_menu_pages');
+function my_menu_pages() {
+	//remove page
+	$cc_remove_page = array(
+		'edit.php',
+		'edit.php?post_type=page',
+		'tools.php',
+		'index.php',
+		'upload.php',
+		'post-new.php?post_type=page',
+		'edit-comments.php',
+		'themes.php',
+		'plugins.php',
+		'options-general.php',
+		'users.php'
+		);
+
+	foreach($cc_remove_page as $id=>$menu){
+		remove_menu_page($menu);
+	}
+	//remove subpage
+	$remove_submenu_page = array(
+		'edit.php?post_type=page' => 'post-new.php?post_type=page',
+		'edit.php' => 'post-new.php',
+		'users.php' => 'profile.php'
+		);
+
+	foreach($remove_submenu_page as $menu=>$submenu){
+		remove_submenu_page($menu,$submenu);
+	};
+	remove_submenu_page('edit.php','edit-tags.php?taxonomy=category');
+	remove_submenu_page('edit.php','edit-tags.php?taxonomy=post_tag');
+	remove_submenu_page('users.php','user-new.php');
+	remove_submenu_page('upload.php','upload.php');
+	remove_submenu_page('upload.php','media-new.php');
+}
 ?>
