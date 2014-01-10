@@ -2,7 +2,6 @@
 /**
  * Template Name: 内部公告
  */
-
 $register_error = '';
 $login_error    = '';
 $update_error  = '';
