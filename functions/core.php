@@ -33,7 +33,7 @@ if(!function_exists('call_func')) {
 
 function component($args = false) {
 	if($args != false)
-		require_once(get_template_directory() . $args . '.php');
+		require_once(get_template_directory() . '/component/' . $args . '.php');
 }
 
 // ----------------------------------------
