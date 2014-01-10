@@ -39,6 +39,7 @@ add_theme_support( 'custom-background', array(
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 
+/*
 require_once(get_template_directory() . '/functions/core.php');
 
 call_func(array(
@@ -51,3 +52,4 @@ call_func(array(
 	'dashboard' => true,
 //	'qn/qn-support' => true
 ));
+*/
