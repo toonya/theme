@@ -38,38 +38,6 @@ function employee_admin_menu() {
 }
 
 // ----------------------------------------
-// ! add customer dashboard widgets
-// ----------------------------------------
-add_action('wp_dashboard_setup','add_dashboard_widgets');
-
-
-function dashboardWidgetContent() {
-	echo '祝全体员工工作顺利!';
-}
-
-
-function add_dashboard_widgets() {
-
-	$custom_dashboard_widgets = array(
-	    'my-dashboard-widget' => array(
-	        'title' => '汇付友',
-	        'callback' => 'dashboardWidgetContent'
-	    )
-	);
-
-    foreach ( $custom_dashboard_widgets as $widget_id => $options ) {
-        wp_add_dashboard_widget(
-            $widget_id,
-            $options['title'],
-            $options['callback']
-        );
-    }
-}
-
-
-
-
-// ----------------------------------------
 // ! add news for employee
 // ----------------------------------------
 function employee_news() {
@@ -116,15 +84,6 @@ function employee_news() {
 }
 if(!post_type_exists('employee_news'))
 	add_action( 'init', 'employee_news' );
-
-// ----------------------------------------
-// ! remove logo
-// ----------------------------------------
-function my_custom_login_logo()
-{
-    echo '<style  type="text/css">.login h1 a {  	background-image: none; } </style>';
-}
-add_action('login_head',  'my_custom_login_logo');
 
 
 // ----------------------------------------

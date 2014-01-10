@@ -60,4 +60,14 @@ function my_menu_pages() {
 	remove_submenu_page('upload.php','upload.php');
 	remove_submenu_page('upload.php','media-new.php');
 }
+
+// ----------------------------------------
+// ! remove logo
+// ----------------------------------------
+function my_custom_login_logo()
+{
+    echo '<style  type="text/css">.login h1 a {  	background-image: none; } </style>';
+}
+add_action('login_head',  'my_custom_login_logo');
+
 ?>

@@ -11,9 +11,21 @@ if(!function_exists('call_func')) {
 		);
 		$args = wp_parse_args($args, $default);
 		if(!empty($args)){
-			foreach($args as $func_name=>$is_call){
-				if($is_call)
-					require_once( $func_name.'.php');
+			foreach($args as $func_name=>$func_args){
+				if($func_args != false){
+
+					if(is_array($func_args)){
+						switch($func_name) {
+							case 'browser-check' :
+								 require_once( $func_name.'.php');
+								 if(belowIE($func_args['version']))
+								 	browser_alert();
+						}
+					}
+
+					else
+						require_once( $func_name.'.php');
+				}
 			}
 		}
 	}
