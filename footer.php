@@ -1,5 +1,5 @@
 
-		<footer>
+		<footerr>
 			<div class="text-center">
 				<p><?php echo get_option('copyright'); ?></p>
 			</div>
