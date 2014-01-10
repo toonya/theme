@@ -38,3 +38,16 @@ add_theme_support( 'custom-background', array(
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'theme_setup' );
+
+require_once(get_template_directory() . '/functions/core.php');
+
+call_func(array(
+	'remove-origin' => true,
+	'protection-code' => true,
+//	'employee' => true,
+	'browser-check' => array('version'=> 8),
+	'banner-option' => true,
+	'add-setting' => true,
+	'dashboard' => true,
+//	'qn/qn-support' => true
+));
