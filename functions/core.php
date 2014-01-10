@@ -31,6 +31,11 @@ if(!function_exists('call_func')) {
 	}
 }
 
+function component($args = false) {
+	if($args != false)
+		require_once(get_template_directory() . $args . '.php');
+}
+
 // ----------------------------------------
 // ! remove dashboard widgets
 // ----------------------------------------
